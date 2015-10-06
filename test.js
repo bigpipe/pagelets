@@ -27,4 +27,19 @@ describe('Pagelets', function () {
       assume(new pagelet.pagelets[name]).to.be.instanceof(Pagelet);
     });
   });
+
+  describe('#length', function () {
+    it('is a getter that returns the number of pagelets', function () {
+      assume(collection.length).to.be.a('number');
+      assume(collection.length).to.equal(2);
+    });
+  });
+
+  describe('#names', function () {
+    it('is a getter that returns an array of names', function () {
+      assume(collection.names).to.be.an('array');
+      assume(collection.names).to.include('first');
+      assume(collection.names).to.include('second');
+    });
+  });
 });
